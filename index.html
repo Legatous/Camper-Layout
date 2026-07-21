@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<title>Volvo V70 Camp Layout — Editable</title>
+<style>
+  
+</style>
+</head>
+<body>
+
+<h1>Volvo V70 — Camp Layout</h1>
+<div class="sub">Drag any block to reposition it, drag the corner handle to resize. Cab shape, hatch, and dimension callouts are fixed for reference.</div>
+
+<div class="toggle" style="display:flex; gap:8px; margin-bottom:10px;">
+  <button id="p2Btn" style="font-family:inherit; font-size:.62rem; letter-spacing:.05em; text-transform:uppercase; background:var(--accent); color:var(--cream); border:2px solid var(--ink); border-radius:4px; padding:5px 9px; cursor:pointer;">P2 · 2000–07</button>
+  <button id="p3Btn" style="font-family:inherit; font-size:.62rem; letter-spacing:.05em; text-transform:uppercase; background:var(--cream); color:var(--ink); border:2px solid var(--ink); border-radius:4px; padding:5px 9px; cursor:pointer;">P3 · 2007–16</button>
+</div>
+<div id="exteriorDims" style="color:var(--cream); font-size:.68rem; letter-spacing:.05em; margin-bottom:14px; text-align:center;">
+  Exterior: 4710 × 1804 × 1466 mm (L × W × H)
+</div>
+
+<div class="toolbar">
+  <button id="resetBtn">Reset layout</button>
+  <button id="zoomOutBtn">Zoom out −</button>
+  <button id="zoomInBtn">Zoom in +</button>
+  <button id="zoomResetBtn">100%</button>
+</div>
+
+<div class="plan-wrap" id="planWrap">
+  <div class="dims">↑ Front (dash) — Rear hatch ↓</div>
+  <div class="dims" style="color:var(--accent); margin-bottom:12px;">~230 × 121–143 cm interior (tapered)</div>
+
+  <div class="van" id="van">
+
+    <svg width="300" height="576" viewBox="0 0 300 576" style="position:absolute;left:0;top:0;z-index:0;pointer-events:none">
+<polygon points="45,4 255,4 285,146 15,146" fill="var(--panel)" stroke="var(--ink)" stroke-width="4"/>
+<rect x="15" y="146" width="270" height="426" fill="var(--panel)" stroke="var(--ink)" stroke-width="4"/>
+</svg>
+<div id="seatDriver">DRIVER<br>seat kept<br>upright</div>
+<div id="seatPassenger">passenger<br>seat folded<br>flat (part of<br>platform)</div>
+<div class="section" id="section-boundary">
+      <div style="position:absolute; top:146px; left:6px; width:288px; height:0; border-top:3px dashed var(--accent); z-index:2; pointer-events:none;"></div>
+      <div style="position:absolute; top:148px; left:200px; font-size:.5rem; color:var(--accent); font-weight:bold; z-index:2; pointer-events:none;">platform limit</div>
+    </div>
+
+    <div class="section" id="section-platform">
+      <div class="cell" id="platform" style="top:198px; left:6px; width:288px; height:206px;">
+        <div class="label">Sleeping Platform</div>
+        <div class="dim">~225 × 130 cm (tapered)</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+    </div>
+
+    <div class="section" id="section-fridges">
+      <div class="cell" id="fridge" style="top:134px; left:16px; width:100px; height:56px;">
+        <div class="label">Fridge 1</div>
+        <div class="dim">40 × 40 cm</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="cell" id="fridge2" style="top:134px; left:130px; width:100px; height:56px; background:#e3ecec;">
+        <div class="label">Fridge 2</div>
+        <div class="dim">40 × 40 cm</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+    </div>
+
+    <div class="section" id="section-flippanel">
+      <!-- flip panel decoration -->
+      <div id="flipZone" style="top:404px; height:80px;"></div>
+      <div id="flipHinge" style="top:404px;"></div>
+      <div class="hingeDot" style="top:400px; left:16px;"></div>
+      <div class="hingeDot" style="top:400px; left:270px;"></div>
+      <div id="flipArrowLabel" style="top:356px; left:150px;">flips up<br>(back → top)</div>
+      <div id="flipPanelLabel" style="top:408px; left:0; width:300px;">FLIP PANEL</div>
+    </div>
+
+    <div class="section" id="section-wetbath">
+      <div class="cell" id="toilet" style="top:428px; left:16px; width:100px; height:50px;">
+        <div class="label">Toilet</div>
+        <div class="dim">36 × 42 cm</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="cell" id="shower" style="top:428px; left:180px; width:100px; height:50px;">
+        <div class="label">Shower Pan</div>
+        <div class="dim">70 × 70 cm</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+    </div>
+
+    <div class="section" id="section-drawer">
+      <div class="cell" id="drawer" style="top:488px; left:6px; width:288px; height:60px;">
+        <div class="label">Slide-out Drawer</div>
+        <div class="dim">stove · food · water · shower head</div>
+        <div class="livecm"></div>
+        <div class="resize-handle"></div>
+      </div>
+    </div>
+
+    <div class="section" id="section-hatch">
+      <div id="hatch" style="top:556px; left:22px; width:258px; height:14px;">
+        Rear Hatch
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="legend">
+  <h2>How to edit</h2>
+  <ul>
+    <li>Drag Fridge, Platform, Toilet, Shower Pan, or Drawer by their body to move them.</li>
+    <li>Drag the small dark square in a block's corner to resize it.</li>
+    <li>Live size in cm shows below each label while resizing.</li>
+    <li>Cab shape, seats, flip-panel markings, hatch, and dimension callouts are fixed — they're reference geometry, not draggable pieces.</li>
+    <li>"Reset layout" restores the suggested arrangement.</li>
+  </ul>
+</div>
+
+<script>
+</script>
+<script src="script.js"></script>
+</body>
+</html>
