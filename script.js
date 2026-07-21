@@ -28,7 +28,6 @@ function getInteriorBounds(y){
   };
 }
 
-
 function makeDraggable(el){
   let startX, startY, startLeft, startTop, dragging=false;
   const minTop = (['platform','fridge','fridge2','toilet','shower'].includes(el.id)) ? CAB_BOUNDARY : 0;
