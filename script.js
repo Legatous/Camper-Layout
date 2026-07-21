@@ -14,7 +14,7 @@ function updateLiveCm(el){
   if(!liveEl) return;
   const wCm = Math.round(el.offsetWidth / PX_PER_CM_X);
   const hCm = Math.round(el.offsetHeight / PX_PER_CM_Y);
-  liveEl.textContent = wCm + ' × ' + hCm + ' cm';
+  liveEl.textContent = hCm + ' × ' + wCm + ' cm';
 }
 
 const CAB_BOUNDARY = 146; // px, bottom edge of the cab shape
