@@ -12,8 +12,8 @@ function captureInitial(){
 function updateLiveCm(el){
   const liveEl = el.querySelector('.livecm');
   if(!liveEl) return;
-  const wCm = Math.round(el.offsetWidth / PX_PER_CM_X);
   const hCm = Math.round(el.offsetHeight / PX_PER_CM_Y);
+  const wCm = Math.round(el.offsetWidth / PX_PER_CM_X);
   liveEl.textContent = hCm + ' × ' + wCm + ' cm';
 }
 
